@@ -93,7 +93,7 @@ button {
 
 @media (max-width:798px) {
    .wave-bouncing-loading-animation{
-        font-size: min(515px,10vw);
+        font-size: min(515px,9vw);
     } 
 
     button {
