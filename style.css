@@ -1,0 +1,110 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    background-color: hsl(180, 100%, 50%);
+}
+
+
+.wave-bouncing-loading-animation{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: min(60px,6vw);
+    color: #091cc9;
+    -webkit-box-reflect: below -0.4em linear-gradient(transparent, #00000045);
+}
+.wave-bouncing-loading-animation > span {
+    display: inline-block;
+    font-weight: bolder;
+    animation: bouncing-wave-animation 2s infinite;
+    animation-delay: calc(.25s * var(--item));
+}
+@keyframes bouncing-wave-animation {
+    0%, 40%, 100% {
+        transform: translateY(0);
+    }
+    20% {
+        transform: translateY(-0.4em);
+    }
+}
+
+
+button {
+    top:50%;
+    left:43%;
+	position: absolute;
+	background: linear-gradient(45deg, 
+  rgb(25, 25, 112) 0%, 
+  rgb(25, 25, 112) 30%, 
+  rgb(0, 0, 139) 30%, 
+  rgb(0, 0, 139) 60%, 
+  rgb(0, 0, 0) 60%, 
+  rgb(0, 0, 0) 100%
+);
+
+	padding: 1em 1.5em;
+	border: 3px solid rgba(8, 23, 234, 0.877);
+	border-radius: 25px 7px;
+	color: rgb(250, 250, 252);
+	text-transform: uppercase;
+	letter-spacing: .1em;
+	transition: all .7s ease;
+    -webkit-box-reflect: below -0.4em linear-gradient(transparent, #0000003e);
+	&:after {
+		position: absolute;
+		top: 20%;
+		left: 50%;
+		background: linear-gradient(45deg, rgb(46, 94, 149),rgb(59, 131, 209),rgb(67, 91, 142));
+		width: 150px;
+		height: 30px;
+		content: '';
+		transform: translate(-50%);
+		border-radius: 25px 7px;
+		filter: blur(20px);
+		z-index: -1;
+	}
+	&:hover {
+		border-radius: 7px 25px;
+		background: linear-gradient(45deg, 
+  rgb(0, 48, 73) 0%, 
+  rgb(0, 84, 145) 30%, 
+  rgb(0, 129, 167) 60%, 
+  rgb(0, 168, 150) 100%
+);
+		letter-spacing: .2em;
+		border: 3px solid rgb(3, 7, 245);
+	}
+}
+
+#texto{
+    text-align: center;
+    top:500px;
+    left: 620px;
+    position: fixed;
+    color: #091cc9;
+    font-family: "Coming Soon", cursive;
+}
+
+
+@media (max-width:798px) {
+   .wave-bouncing-loading-animation{
+        font-size: min(515px,10vw);
+    } 
+
+    button {
+        top:36%;
+        left:29%;
+    }
+    #texto{
+        top:50%;
+        left: 25%;
+        max-width: 220px;
+        font-size: 15px;
+    }
+    
+}
